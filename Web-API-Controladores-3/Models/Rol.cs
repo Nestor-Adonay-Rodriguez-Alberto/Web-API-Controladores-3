@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace Web_API_Controladores_3.Models
 {
@@ -16,6 +17,7 @@ namespace Web_API_Controladores_3.Models
 
 
         // Tabla Empleado Asociada A Esta:  * RELACION *
-        public virtual List<Empleado> Lista_Empleados { get; set; }
+        [JsonIgnore]
+        public virtual List<Empleado>? Lista_Empleados { get; set; }
     }
 }
