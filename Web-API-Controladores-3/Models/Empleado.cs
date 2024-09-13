@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace Web_API_Controladores_3.Models
 {
@@ -31,7 +32,8 @@ namespace Web_API_Controladores_3.Models
         // Referencia Tabla Empleado:  * RELACION *
         [Required]
         [ForeignKey("Objeto_Rol")]
-        public int IdRolEnEmpleado { get; set; }
-        public virtual Rol Objeto_Rol { get; set; }
+        public int IdRolEnEmpleado { get; set; }       
+        [JsonIgnore]
+        public virtual Rol? Objeto_Rol { get; set; }
     }
 }
